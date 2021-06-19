@@ -1,0 +1,119 @@
+<section>
+  <div class="container">
+    <h1 class="mt-3 text-center">Action Test</h1>
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2 class="heading-section">
+          <small>Show / Hide</small>
+        </h2>
+        <button (click)="button1()" type="button" class="btn mb-2 mb-md-0 btn-primary">Button 1</button>
+        <button (click)="button2()" type="button" class="btn mb-2 mb-md-0 btn-secondary">Button 2</button>
+        <div class="row mt-4">
+          <div class="col-md-12 card p-3" *ngIf="showButton1">Button1 content</div>
+          <div class="col-md-12 card p-3" *ngIf="showButton2">Button2 content</div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2 class="heading-section">
+          <small>Input text</small>
+        </h2>
+        <input type="text" class="mb-2 mb-md-0 form-text form-control" [(ngModel)]="textValue" />
+        <div class="row mt-4">
+          <div class="col-md-12 card p-3" *ngIf="textValue != ''">{{textValue}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2 class="heading-section">
+          <small>Dropdown Buttons</small>
+        </h2>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="dropdown d-block">
+              <button class="btn mb-2 mb-md-0 btn-primary btn-block btn-round dropdown-toggle" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="dropdown('Action')">Action</a>
+                <a class="dropdown-item" (click)="dropdown('Another action')">Another action</a>
+                <a class="dropdown-item" (click)="dropdown('Something else here')">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="dropdown d-block">
+              <button class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round dropdown-toggle" type="button"
+                id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton2">
+                <a class="dropdown-item" (click)="dropdown('Action 2')">Action 2</a>
+                <a class="dropdown-item" (click)="dropdown('Another action 2')">Another action 2</a>
+                <a class="dropdown-item" (click)="dropdown('Something else here 2')">Something else here 2</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-4 p-3 card" *ngIf="dropdownValue">
+            {{dropdownValue}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <h2 class="heading-section">
+          <small>Group Buttons</small>
+        </h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="btn-group mb-2 mb-md-0 btn-block">
+              <button (click)="group1()" type="button" class="btn btn-primary">Button 1</button>
+              <button (click)="group2()" type="button" class="btn btn-outline-primary">Outline Button 2</button>
+              <button (click)="group3()" type="button" class="btn btn-primary">Button 3</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-md-4">
+        <h2 class="heading-section">
+          <small>Checkboxes</small>
+        </h2>
+        <div class="checkbox checkbox-primary">
+          <label><input class="styled" type="checkbox" [checked]="checkbox1"
+              (change)="checkbox1 = !checkbox1"><span>Primary
+              {{checkbox1 ? 'Checked' : 'Unchecked'}}</span></label>
+        </div>
+        <div class="checkbox checkbox-secondary">
+          <label><input class="styled" type="checkbox" [checked]="checkbox2"
+              (change)="checkbox2 = !checkbox2"><span>Success
+              {{checkbox2 ? 'Checked' : 'Unchecked'}}</span></label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h2 class="heading-section">
+          <small>Radios Buttons</small>
+        </h2>
+        <div class="radio radio-primary">
+          <input type="radio" name="radio1" id="radio1" value="option1" [checked]="radioValue == 'option1'"
+            (change)="radioValue=$event.target.value">
+          <label for="radio1"><span>Option 1</span></label>
+        </div>
+        <div class="radio radio-primary">
+          <input type="radio" name="radio1" id="radio2" value="option2" [checked]="radioValue == 'option2'"
+            (change)="radioValue=$event.target.value">
+          <label for="radio2"><span>Option 2</span></label>
+        </div>
+
+        <div class="col-12 mt-4 p-3 card">
+          {{radioValue}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
