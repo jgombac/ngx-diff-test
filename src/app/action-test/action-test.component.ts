@@ -7,17 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionTestComponent implements OnInit {
 
-  public checkbox1 = true;
-  public checkbox2 = false;
+  public checkbox1 = false;
+  public checkbox2 = true;
 
-  public showButton1 = true;
-  public showButton2 = false;
+  public showButton1 = false;
+  public showButton2 = true;
 
-  public dropdownValue = null;
+  public dropdownValue = "Action";
 
-  public radioValue = "option1";
+  public radioValue = "option2";
 
   public textValue = "";
+
+  public groupValue = "1";
 
   constructor() { }
 
@@ -37,15 +39,15 @@ export class ActionTestComponent implements OnInit {
   }
 
   public group1 () {
-
+    this.groupValue = "1";
   }
 
   public group2 () {
-
+    this.groupValue = "2";
   }
 
   public group3 () {
-
+    this.groupValue = "3";
   }
 
 }

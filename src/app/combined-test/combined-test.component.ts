@@ -11,8 +11,8 @@ export class CombinedTestComponent implements OnInit {
   public password = "";
   public response1 = "";
 
-  public showButton1 = true;
-  public showButton2 = false;
+  public showButton1 = false;
+  public showButton2 = true;
 
 
   constructor() { }
@@ -25,7 +25,7 @@ export class CombinedTestComponent implements OnInit {
   }
 
   public submitForm () {
-    this.response1 = `Hi ${this.email} with password ${this.password}!`;
+    this.response1 = `Hi ${this.email} with password ${this.password.replace(/./g, '*')}!`;
   }
 
   public button1 () {
