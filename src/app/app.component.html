@@ -10,19 +10,16 @@
     <h2>Here are some links to help you start: </h2>
     <ul class="list-inline">
       <li>
-        <h3><a routerLink="/" routerLinkActive="active">Home</a></h3>
+        <h3><a routerLink="/" routerLinkActive="active" *ngIf="router.url != '/'">Home</a></h3>
       </li>
       <li>
-        <h3><a routerLink="/new-page" routerLinkActive="active">New page</a></h3>
+        <h3><a routerLink="/actions" routerLinkActive="active" *ngIf="router.url != '/actions'">Actions</a></h3>
       </li>
       <li>
-        <h3><a routerLink="/actions" routerLinkActive="active">Actions</a></h3>
+        <h3><a routerLink="/forms" routerLinkActive="active" *ngIf="router.url != '/forms'">Forms</a></h3>
       </li>
       <li>
-        <h3><a routerLink="/forms" routerLinkActive="active">Forms</a></h3>
-      </li>
-      <li>
-        <h3><a routerLink="/combined" routerLinkActive="active">Combined</a></h3>
+        <h3><a routerLink="/combined" routerLinkActive="active" *ngIf="router.url != '/combined'">Combined</a></h3>
       </li>
     </ul>
   </div>
