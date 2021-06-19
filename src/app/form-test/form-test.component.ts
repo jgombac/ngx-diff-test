@@ -27,7 +27,7 @@ export class FormTestComponent implements OnInit {
   }
 
   public submitForm () {
-    this.response1 = `Hi ${this.email} with password ${this.password}!`;
+    this.response1 = `Hi ${this.email} with password ${this.password.replace(/./g, '*')}!`;
   }
 
   public submitForm2 () {
